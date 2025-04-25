@@ -18,6 +18,12 @@
 
                     <!-- Form -->
                     <form wire:submit.prevent='login'>
+                        @if (session('error'))
+                            <div class="mt-2 bg-red-500 text-sm text-white rounded-lg p-4 mb-4" role="alert"
+                                tabindex="-1" aria-labelledby="hs-solid-color-danger-label">
+                                <span id="hs-solid-color-danger-label" class="font-bold">{{ session('error') }}</span>
+                            </div>
+                        @endif
                         <div class="grid gap-y-4">
                             <!-- Form Group -->
                             <div>
@@ -25,7 +31,7 @@
                                 <div class="relative">
                                     <input type="email" id="email" wire:model="email"
                                         class="py-3 px-4 block w-full border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                                         aria-describedby="email-error">
+                                        aria-describedby="email-error">
                                     @error('email')
                                         <div class="absolute inset-y-0 end-0 flex items-center pointer-events-none pe-3">
                                             <svg class="h-5 w-5 text-red-500" width="16" height="16"
@@ -52,7 +58,7 @@
                                 <div class="relative">
                                     <input type="password" id="password" wire:model="password"
                                         class="py-3 px-4 block w-full border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                                         aria-describedby="password-error">
+                                        aria-describedby="password-error">
                                     @error('password')
                                         <div class="absolute inset-y-0 end-0 flex items-center pointer-events-none pe-3">
                                             <svg class="h-5 w-5 text-red-500" width="16" height="16"
