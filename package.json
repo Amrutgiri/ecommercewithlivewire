@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "preline": "^3.0.1",
+        "sweetalert2": "^11.19.1",
         "vanilla-calendar-pro": "^3.0.4"
     }
 }
